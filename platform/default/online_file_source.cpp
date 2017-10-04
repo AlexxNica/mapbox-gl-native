@@ -270,7 +270,7 @@ Timestamp interpolateExpiration(const Timestamp& current,
         return current;
     }
 
-    if (!bool(prior)) {
+    if (!prior || *prior == Timestamp{ Seconds::zero() }) {
         expired = true;
         return current;
     }
