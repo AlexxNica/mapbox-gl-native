@@ -382,6 +382,10 @@ public class MapView extends FrameLayout {
 
   @Override
   public boolean onTouchEvent(MotionEvent event) {
+    if (nativeMapView == null) {
+      return super.onTouchEvent(event);
+    }
+
     if (event.getAction() == MotionEvent.ACTION_DOWN) {
       mapZoomButtonController.setVisible(true);
     }

@@ -526,7 +526,7 @@ final class MapGestureDetector {
    */
   private class RotateGestureListener extends RotateGestureDetector.SimpleOnRotateGestureListener {
 
-    private static final long ROTATE_INVOKE_WAIT_TIME = 1500;
+    private static final long ROTATE_INVOKE_WAIT_TIME = 750;
 
     private long beginTime = 0;
     private float totalAngle = 0.0f;
