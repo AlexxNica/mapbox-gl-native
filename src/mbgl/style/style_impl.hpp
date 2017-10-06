@@ -41,6 +41,12 @@ public:
     Impl(Scheduler&, FileSource&, float pixelRatio);
     ~Impl() override;
 
+    Impl(const Impl&);
+    Impl& operator=(const Impl&) = delete;
+
+    Impl(Impl&&) = delete;
+    Impl& operator=(Impl&&) = delete;
+
     void loadJSON(const std::string&);
     void loadURL(const std::string&);
 
@@ -98,6 +104,7 @@ public:
 private:
     void parse(const std::string&);
 
+    float pixelRatio;
     Scheduler& scheduler;
     FileSource& fileSource;
 
